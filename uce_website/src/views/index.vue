@@ -1,5 +1,5 @@
 <template>
-  <div id="inde">
+  <div id="index">
     <el-carousel height="300px">
       <el-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>

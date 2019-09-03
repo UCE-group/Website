@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-
+    <el-container>
+      <el-header><navheader></navheader></el-header>
+      <el-main><router-view></router-view></el-main>
+    </el-container>
   </div>
 </template>
 
 <script>
+import Nav_header from './components/Nav_header'
+
 export default {
   name: 'app',
   components: {
+    'navheader': Nav_header
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

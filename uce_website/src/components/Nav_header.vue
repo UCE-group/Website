@@ -8,21 +8,17 @@
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#ffd04b">
-  <el-menu-item index="1">处理中心</el-menu-item>
-  <el-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <el-menu-item index="2-1">选项1</el-menu-item>
-    <el-menu-item index="2-2">选项2</el-menu-item>
-    <el-menu-item index="2-3">选项3</el-menu-item>
-    <el-submenu index="2-4">
-    <template slot="title">选项4</template>
-    <el-menu-item index="2-4-1">选项1</el-menu-item>
-    <el-menu-item index="2-4-2">选项2</el-menu-item>
-    <el-menu-item index="2-4-3">选项3</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="3" disabled>消息中心</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+  <el-menu-item index="1"><router-link tag="el-link" :underline="false" :to="{name: 'index'}">计算机爱好者联盟</router-link></el-menu-item>
+  <el-menu-item index="2">社团简介</el-menu-item>
+  <el-menu-item index="3">项目介绍</el-menu-item>
+  <el-menu-item index="4">学习资源</el-menu-item>
+  <el-menu-item index="5">近期活动</el-menu-item>
+  <el-menu-item index="6">
+    <el-row :gutter="20">
+      <el-col :span="10"><el-avatar :size="40" :src="userAvatarURL"></el-avatar></el-col>
+      <el-col :span="10"><span id="username">{{userName}}</span></el-col>
+    </el-row>
+  </el-menu-item>
   </el-menu>
 </div>
 </template>
@@ -32,7 +28,9 @@
     data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',
+        userAvatarURL: './logo.png',
+        userName: 'Jaye瓶子'
       };
     },
     methods: {
